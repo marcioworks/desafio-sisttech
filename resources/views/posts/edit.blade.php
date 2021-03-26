@@ -14,22 +14,22 @@
                         </div>
                     @endif
 
-                    <form action="/posts/{{$post->id}}" method="post">
+                    <form action="{{route('atualizar',['post'=>$post->id]) }}" method="post">
                         @csrf
                         @method('PUT')
                         <div class="form-group">
                             <label for="">Post Title</label>
-                            <input type="text" name="title" class="form-control" value="{{$post->title}}">
+                            <input type="text" name="titulo" class="form-control" value="{{$post->title}}">
                         </div>
 
                         <div class="form-group">
                             <label for="">Post Body</label>
-                            <textarea name="body" id="" cols="30" rows="10" class="form-control">{{$post->body}}</textarea>
+                            <textarea name="texto" id="" cols="30" rows="10" class="form-control">{{$post->body}}</textarea>
                         </div>
 
                         <div class="form-group">
                             <label for="">Publish At</label>
-                            <input type="date" name="published_at" class="form-control" value="{{ date('Y-m-d', strtotime($post->published_at)) }}">
+                            <input type="date" name="criado_em" class="form-control" value="{{ date('Y-m-d', strtotime($post->published_at)) }}">
                         </div>
 
                         <button type="submit" class="btn btn-primary">Submit</button>

@@ -14,12 +14,12 @@
                         </div>
                     @endif
 
-                    <h2>{{$post->title}}</h2>
+                    <h2>{{$post->titulo}}</h2>
 
-                    <p>Published At: {{date('Y-m-d', strtotime($post->published_at))}}</p>
+                    <p>Published At: {{date('Y-m-d', strtotime($post->criado_em))}}</p>
                     <br>
                     <div>
-                        {{$post->body}}
+                        {{$post->texto}}
                     </div>
                 </div>
             </div>

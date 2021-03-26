@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
     <div class="col-12">
-                <a href="posts/create" class="btn btn-primary mb-2">Create Post</a>
+                <a href="{{ route('create') }}" class="btn btn-primary mb-2">Create Post</a>
                 <br>
                 <table class="table table-bordered">
                     <thead>
@@ -22,9 +22,9 @@
                             <td>{{ $post->titulo }}</td>
                             <td>{{ date('Y-m-d', strtotime($post->criado_em)) }}</td>
                             <td>
-                            <a href="posts/{{$post->id}}" class="btn btn-primary">Show</a>
-                            <a href="posts/{{$post->id}}/edit" class="btn btn-primary">Edit</a>
-                            <form action="posts/{{$post->id}}" method="post" class="d-inline">
+                            <a href="{{route('show',['post'=>$post->id]) }}" class="btn btn-primary">Show</a>
+                            <a href="{{route('editar',['post'=>$post->id]) }}" class="btn btn-primary">Edit</a>
+                            <form action="{{route('deletar',['post'=>$post->id]) }}" method="post" class="d-inline">
                                 {{ csrf_field() }}
                                 @method('DELETE')
                                 <button class="btn btn-danger" type="submit">Delete</button>

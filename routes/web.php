@@ -24,6 +24,6 @@ Route::get('/home', [App\Http\Controllers\PostController::class, 'index'])->name
 Route::get('post/create', [App\Http\Controllers\PostController::class, 'create'])->name('create');
 Route::post('/post', [App\Http\Controllers\PostController::class, 'store']);
 Route::get('post/{post}/edit', [App\Http\Controllers\PostController::class, 'edit'])->name('editar');
-Route::get('post/{post}', [App\Http\Controllers\PostController::class, 'show']);
-Route::put('post/{post}', [App\Http\Controllers\PostController::class, 'update']);
-Route::delete('post/{post}', [App\Http\Controllers\PostController::class, 'destroy']);
+Route::get('post/{post}', [App\Http\Controllers\PostController::class, 'show'])->name('show');
+Route::put('post/{post}', [App\Http\Controllers\PostController::class, 'update'])->name('atualizar');
+Route::delete('post/{post}', [App\Http\Controllers\PostController::class, 'destroy'])->name('deletar');
