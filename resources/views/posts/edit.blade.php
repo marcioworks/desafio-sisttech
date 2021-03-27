@@ -14,22 +14,26 @@
                         </div>
                     @endif
 
-                    <form action="{{route('atualizar',['post'=>$post->id]) }}" method="post">
+                    <form action="{{route('atualizar',['post'=>$post->id]) }}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="form-group">
+                            <label for="">Imagem</label>
+                            <input type="file" name="imagem" class="form-control">
+                        </div>
+                        <div class="form-group">
                             <label for="">Titulo</label>
-                            <input type="text" name="titulo" class="form-control" value="{{$post->title}}">
+                            <input type="text" name="titulo" class="form-control" value="{{$post->titulo}}">
                         </div>
 
                         <div class="form-group">
                             <label for="">Texto</label>
-                            <textarea name="texto" id="" cols="30" rows="10" class="form-control">{{$post->body}}</textarea>
+                            <textarea name="texto" id="" cols="30" rows="10" class="form-control">{{$post->texto}}</textarea>
                         </div>
 
                         <div class="form-group">
                             <label for="">Publicado em</label>
-                            <input type="date" name="criado_em" class="form-control" value="{{ date('Y-m-d', strtotime($post->published_at)) }}">
+                            <input type="date" name="criado_em" class="form-control" value="{{ date('Y-m-d', strtotime($post->criado_em)) }}">
                         </div>
 
                         <button type="submit" class="btn btn-primary">Submit</button>

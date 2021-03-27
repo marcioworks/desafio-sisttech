@@ -5,6 +5,7 @@
 <h3>1) composer install<h3>
 <h3>2) php artisan migrate<h3>
 <h3>3) php artisan db:seed<h3>
+<h3>3)  php artisan storage:link   para carregar as primeiras imagens<h3>
 <h3>4) npm install && npm run dev<h3>
 <h3>4) php artisan key:generate<h3>
 <h3>5) php artisan serve <h3>

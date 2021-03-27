@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
             'titulo' => 'Marcio Da Silva Santos',
             'texto' => 'Marcio é formado em Analise e desenvolvimento de sistemas e atulamente esta cursando Sistemas de Informação, ele é apaixonado por programação e pra ele não existe a melhor tecnologia ou Linguagem de programação, ele acredita que cada tecnologia consegue atingir seus propositos e que so depende do que se quer fazer. e suas outras grandes paixões são os animes e games.',
             'criado_em'=> Carbon::parse("2021-03-26"),
-            'imagem' => 'imagens/Gf8Oi0ZRVgQ5gRZRaIaR0xKaOMJnZBEMQazseKOD.jpg.jpg',
+            'imagem' => 'imagens/Gf8Oi0ZRVgQ5gRZRaIaR0xKaOMJnZBEMQazseKOD.jpg',
         ]);
     }
 }
