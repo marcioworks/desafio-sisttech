@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -36,17 +37,26 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $request->validate([
             'titulo' => 'required',
             'texto' => 'required',
-            ]);
+        ]);
         $post = new Post();
+        if ($request->hasFile('imagem')) {
+            $imagem = $request->file('imagem');
+            $imagem_local = $imagem->store('imagens', 'public');
+            $post->imagem = $imagem_local;
+        } else {
+            $post->imagem = '';
+        }
+        $imagem = $request->file('imagem');
         $post->titulo = $request->titulo;
         $post->texto = $request->texto;
         $post->criado_em = $request->criado_em;
 
         $post->save();
-        return redirect('/home')->with('success','Post created successfully!');
+        return redirect('/home')->with('success', 'Post created successfully!');
     }
 
     /**
@@ -84,13 +94,20 @@ class PostController extends Controller
         $request->validate([
             'titulo' => 'required',
             'texto' => 'required',
-            ]);
+        ]);
+
+        if ($request->file('imagem')) {
+            Storage::disk('public')->delete($post->imagem);
+        }
+        $imagem= $request->file('imagem');
+        $imagem_local = $imagem->store('imagens', 'public');
+        $post->imagem = $imagem_local;
         $post->titulo = $request->titulo;
         $post->texto = $request->texto;
         $post->criado_em = $request->criado_em;
 
         $post->save();
-        return redirect('/home')->with('success','Post updated successfully!');
+        return redirect('/home')->with('success', 'Post updated successfully!');
     }
 
     /**
@@ -101,7 +118,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        Storage::disk('public')->delete($post->imagem);
         $post->delete();
-        return redirect('/home')->with('success','Post deleted successfully!');
+        return redirect('/home')->with('success', 'Post deleted successfully!');
     }
 }

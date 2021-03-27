@@ -1,0 +1,11 @@
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+.imagem {
+    max-width: 100%;
+    min-width: 400px;
+    height: 400px;
+    object-fit: cover;
+    object-position: top;
+}

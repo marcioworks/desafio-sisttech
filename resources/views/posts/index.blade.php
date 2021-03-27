@@ -4,14 +4,14 @@
 <div class="container">
     <div class="row justify-content-center">
     <div class="col-12">
-                <a href="{{ route('create') }}" class="btn btn-primary mb-2">Create Post</a>
+                <a href="{{ route('create') }}" class="btn btn-primary mb-2">Criar Post</a>
                 <br>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th>Id</th>
                             <th>Title</th>
-                            <th>Published At</th>
+                            <th>Publicado em</th>
                             <th colspan="2">Action</th>
                         </tr>
                     </thead>

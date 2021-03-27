@@ -16,7 +16,7 @@
 
                     <h2>{{$post->titulo}}</h2>
 
-                    <p>Published At: {{date('Y-m-d', strtotime($post->criado_em))}}</p>
+                    <p>Publicado em: {{date('Y-m-d', strtotime($post->criado_em))}}</p>
                     <br>
                     <div>
                         {{$post->texto}}
