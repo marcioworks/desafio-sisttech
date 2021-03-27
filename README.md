@@ -1,3 +1,16 @@
+<h1>Passo a Passo</h1>
+<h2>configurar o .env com os dados de conexão</h2>
+<h2>abrir terminal e digitar: </h2>
+<h3>1) composer install<h3>
+<h3>2) php artisan migrate<h3>
+<h3>3) php artisan db:seed<h3>
+<h3>4) npm install && npm run dev<h3>
+<h3>5) php artisan serve <h3>
+<h3>acessar localhost:8000 no browser.
+Registar-se  e fazer login para usar.<h3>
+<h3><h3>
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
