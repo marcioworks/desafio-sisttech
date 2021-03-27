@@ -1,4 +1,5 @@
 <h1>Passo a Passo</h1>
+<h2>criar uma copia do arquivo .env-example e renomea-lo para .env</h2>
 <h2>configurar o .env com os dados de conexão</h2>
 <h2>abrir terminal e digitar: </h2>
 <h3>1) composer install<h3>
